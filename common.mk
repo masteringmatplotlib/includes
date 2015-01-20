@@ -26,3 +26,7 @@ repl:
 flakes:
 	@echo "\nChecking for flakes ...\n"
 	flake8 $(SOURCE)
+
+update:
+	git submodule foreach git pull origin master
+
