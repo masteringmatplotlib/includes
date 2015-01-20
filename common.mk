@@ -5,7 +5,7 @@ SYSTEM_PYTHON=$(shell which $(PYTHON))
 SOURCE=./lib
 
 virtual-env:
-	$(SYSTEM_PYTHON) -m venv $(VENV)
+	-$(SYSTEM_PYTHON) -m venv $(VENV)
 
 project-deps:
 	. $(VENV)/bin/activate && \
