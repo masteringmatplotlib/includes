@@ -6,7 +6,7 @@ SYSTEM_PYTHON=$(shell which $(PYTHON))
 SOURCE=./lib
 
 virtual-env:
-	$(SYSTEM_PYTHON) -m venv $(VENV)
+	-$(SYSTEM_PYTHON) -m venv $(VENV)
 
 base-deps:
 	. $(VENV)/bin/activate && \
@@ -27,3 +27,7 @@ repl:
 flakes:
 	@echo "\nChecking for flakes ...\n"
 	flake8 $(SOURCE)
+
+update:
+	git submodule foreach git pull origin master
+
