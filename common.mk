@@ -1,15 +1,16 @@
 VENV=../.venv-mmpl
 PYTHON=python3.4
 IPYTHON=ipython3
+PIP=pip3.4
 SYSTEM_PYTHON=$(shell which $(PYTHON))
 SOURCE=./lib
 
 virtual-env:
 	$(SYSTEM_PYTHON) -m venv $(VENV)
 
-project-deps:
+base-deps:
 	. $(VENV)/bin/activate && \
-	pip3.4 install -r requirements.txt
+	$(PIP) install -r requirements/base.txt
 
 project-setup: virtual-env deps
 
